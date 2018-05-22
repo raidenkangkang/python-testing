@@ -11,3 +11,13 @@ docker push 079385551353.dkr.ecr.us-east-1.amazonaws.com/testing-container-repo:
 
 
 docker run -d -p 8080:8080 flask-docker-image
+
+
+#add python3 install package
+sudo python3.6 -m pip install numpy
+
+#git process
+git add --all
+git status
+git commit -m "some comments"
+git push
