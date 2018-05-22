@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>advance HTML testing</title>
+    </head>
+    <body>
+        <H3>lesson two - advance html topics</H3>
+        
+        <!--table testing-->
+        <table border="1">
+            <thead>
+                <th>SSO</th>
+                <th>Email</th>
+                <th>Name</th>
+            </thead>
+            <tr>
+                <td>302015572</td>
+                <td>raiden.yu@ge.com</td>
+                <td>Raiden Yu</td>
+            </tr>
+            <tr>
+                <td>302011111</td>
+                <td>rahul@ge.com</td>
+                <td>Rahul</td>
+            </tr>
+        </table>
+        
+        <!--forms testing 提交form-->
+        <form action="https://www.google.com" method="get">
+            <input type="text" name="text_Input" value="this is default value"/>put your text here...<br>
+            <input type="email" name="email_Input" value="email here"/>put your email here<br>
+            <input type="password" name="pwd_Input"/>your password here...<br>
+            <input type="submit" name="submit_Input" value="Click me"/>Click me<br>
+            <input type="color" name="color_Input" value="I'm your color"/>Color<br>
+            <!--Br换行-->
+            
+            <input type="radio" name="radio_Input" value="man"/>Man<br>
+            <input type="radio" name="radio_Input" value="women"/>Woman<br>
+            <input type="radio" name="radio_Input" value="child"/>Child<br>
+            
+            <!--label testing，标签-->
+            <label for="id1">input something</label><br>
+            <input id="id1" type="text" name="" placeholder="id1 input required" required/><br>
+            
+            <label for="id2">input something</label><br>
+            <input id="id2" type="text" name="" placeholder="id2 input required" required/><br>
+            
+            <label for="id3">input something</label><br>
+            <input id="id3" type="text" name="" placeholder="id3 input required" required/><br>
+        </form>
+        
+        <form>
+            <!--给radio input一样的name可以互斥, value可以在提交后赋值给http地址栏的参数-->
+            <label for="in_country">in the country ?</label>
+            <input id="in_country" type="radio" name="country_select" value="incountry"/>
+            
+            <label for="out_country">outside the country ?</label>
+            <input id="out_country" type="radio" name="country_select" value="outsideofcountry"/>
+        </form>
+        
+        <form>
+            <!--dropdown test 下拉菜单-->
+            <label for="drop_down">how is the service</label>
+            <select id="drop_down">
+                <option value="great" value="3">Great</option>
+                <option value="medium" value="2">Medium</option>
+                <option value="nogood" value="1">Not good</option>
+            </select>
+        </form>
+        
+        <textarea name="my_textarea" rows="8" cols="80">this is my text area big box !</textarea>
+        
+    </body>
+</html>

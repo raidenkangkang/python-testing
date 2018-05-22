@@ -1,0 +1,74 @@
+/*this is the CSS comments*/
+
+/*
+selected tag{
+    property: value;
+}*/
+
+body{
+    color: blue;
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+span{
+    color: black;
+}
+
+/*用id来选择单个组件，用class来选择一组组件*/
+/*选class直接打class名字前面加一个点*/
+.div_class_group_one{
+    color: red;
+    border: dashed 1px blue;
+}
+
+.div_class_group_two{
+    color: gray;
+}
+
+/*用#来选择id*/
+#id_p_01{
+    color: green;
+    text-decoration: line-through;
+}
+
+#id_p_02{
+    color: pink;
+}
+
+#lorem{
+    font-family: fantasy;
+    font-size: 0.6em; /*EM代表上一级（比如body）里面定义的font大小，1.6em表示是上一级大小的1.6倍*/
+    font-style: italic;
+    font-weight: bold;
+    text-align: left;
+}
+
+/*不常用*/
+div p{
+    color: black;
+}
+
+
+#box01{
+    border: 4px solid blue;
+    width: 25%; /*占浏览器宽度的百分比*/
+    text-align: center;
+    /*top right bottom left, margin 是整个框体和其他框体之间的距离*/
+    margin-top: 100px;
+    margin-right: 50px;
+    margin-bottom: 44px;
+    margin-left: 130px;
+    /*设置为auto则自动居中*/
+}
+
+#box02{
+    /*padding 是实际HTML内容和框体之间的距离*/
+    border: 4px solid red;
+    width: 30%;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    text-align: center;
+}
