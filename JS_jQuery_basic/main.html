@@ -1,23 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>same testing</title>
-    <!--Jquery must before JS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!--Jquery CDN-->
+<html>
 
+<head>
+    <script>
+        function myFunc(){
+            document.getElementById("demo").innerHTML="JS Change from the header !"
+        }
+    </script>
+    <script type="text/javascript" src="myJS-01.js"></script>
 </head>
+
 <body>
 
-    <h1 class="testClass">hello world !</h1>
-    <ul>hello 1</ul>
-        <li id="id1">item 1</li>
-        <li id="id2">item 2</li>
-    <ul>hello 2</ul>
+    <h2>What Can JavaScript Do?</h2>
 
+    <p id="demo">JavaScript can change HTML content.</p>
 
-    <!--coding JS put here-->
-    <script src="my.js"></script>
+    <button type="button" onclick='document.getElementById("demo").style.fontSize="35px"'>Change font</button>
+    <button type="button" onclick='document.getElementById("demo").style.display="none"'>Hide</button>
+    <button type="button" onclick='document.getElementById("demo").style.display="block"'>Show back</button>
+    
+    <button type="button" onclick="myFunc()">Change text from header</button>
+    <button type="button" onclick="myNewFunc()">Change text from body</button>
+    <button type="button" onclick="myAnotherFunc()">Change from JS file</button>
+    <button type="button" onclick="myWrite()">Document.Write</button>
+    
+    <script>
+        function myNewFunc(){
+            document.getElementById("demo").innerHTML="Change text from body JS"
+        }
+    </script>
+    
+    <script>
+        document.getElementById("demo").innerHTML=3+1
+    </script>
+    
+    <script>
+        function myWrite(){
+            document.write("Document.Write !") //this will override and delete everything !
+            window.alert("This is alert !")
+            console.log("Let me do a log in the console also !")
+        }
+    </script>
+
 </body>
+
 </html>
