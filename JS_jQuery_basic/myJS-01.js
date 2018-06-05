@@ -16,10 +16,15 @@ function myAnotherFunc(){
 function myObject(){
     var myStuff = {
         "name": "raiden",
-        "sso": "302015572"
+        "sso": "302015572",
+        getSon: function(){
+            return this.name + " son is Hong Yu" //In a function definition, this refers to the "owner" of the function.
+        }
     }
-    var my_undefined;
+    var my_undefined; // type is undefined
     var my_null;
     my_null = null; // Now value is null, but type is still an object
-    document.getElementById("demo").innerHTML = myStuff.name + ", type is: " + typeof(myStuff.name) + ', myundeined item type is: ' + typeof(my_undefined) + ", myNull item type is: " + typeof(my_null)
+    document.getElementById("demo").innerHTML = myStuff.name + ", type is: " + typeof(myStuff[name]) + 
+    ', myundeined item type is: ' + typeof(my_undefined) + ", myNull item type is: " + typeof(my_null) + 
+    ", call Function from Object:" + myStuff.getSon()
 }
