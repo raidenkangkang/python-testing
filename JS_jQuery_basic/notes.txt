@@ -1,0 +1,717 @@
+// JavaScript File
+
+// Event	Description (common events)
+// onchange	An HTML element has been changed
+// onclick	The user clicks an HTML element
+// onmouseover	The user moves the mouse over an HTML element
+// onmouseout	The user moves the mouse away from an HTML element
+// onkeydown	The user pushes a keyboard key
+// onload	The browser has finished loading the page
+// Things that should be done every time a page loads
+// Things that should be done when the page is closed
+// Action that should be performed when a user clicks a button
+// Content that should be verified when a user inputs data
+// And more ...
+
+var x = 123e7; //1230000000
+var y = 123e-8; //0.00000123
+document.getElementById("demo").innerHTML = x + "<br>" + y;
+
+var myNumber = 128;
+document.getElementById("demo").innerHTML = "128 = " + 
+myNumber + " Decimal, " +
+myNumber.toString(16) + " Hexadecimal, " +
+myNumber.toString(8) + " Octal, " +
+myNumber.toString(2) + " Binary."
+
+var x = 9.656;
+x.toFixed(0);           // returns 10
+x.toFixed(2);           // returns 9.66, toFixed(2) is perfect for working with money.
+x.toFixed(4);           // returns 9.6560
+x.toFixed(6);           // returns 9.656000
+
+Number(true);          // returns 1
+Number(false);         // returns 0
+Number("10");          // returns 10
+Number("  10");        // returns 10
+Number("10  ");        // returns 10
+Number("10 20");       // returns NaN 
+Number("John");        // returns NaN, If the number cannot be converted, NaN (Not a Number) is returned.
+Number(new Date("2017-09-30"));    // returns 1506729600000, The Number() method above returns the number of milliseconds since 1.1.1970.
+
+parseInt("10");         // returns 10
+parseInt("10.33");      // returns 10
+parseInt("10 20 30");   // returns 10
+parseInt("10 years");   // returns 10
+parseInt("years 10");   // returns NaN
+//parseInt() parses a string and returns a whole number. Spaces are allowed. Only the first number is returned:
+
+
+parseFloat("10");        // returns 10
+parseFloat("10.33");     // returns 10.33
+parseFloat("10 20 30");  // returns 10
+parseFloat("10 years");  // returns 10
+parseFloat("years 10");  // returns NaN
+//parseFloat() parses a string and returns a number. Spaces are allowed. Only the first number is returned:
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Lemon");    // adds a new element (Lemon) to fruits
+
+var points = new Array();         // Bad
+var points = [];                  // Good 
+var points = new Array(40, 100, 1, 5, 25, 10); // Bad
+var points = [40, 100, 1, 5, 25, 10];          // Good
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.pop();              // Removes the last element ("Mango") from fruits
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.shift();            // Removes the first element "Banana" from fruits
+
+//Since JavaScript arrays are objects, elements can be deleted by using the JavaScript operator delete:
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+delete fruits[0];           // Changes the first element in fruits to undefined
+//Using delete may leave undefined holes in the array. Use pop() or shift() instead.
+
+var myGirls = ["Cecilie", "Lone"];
+var myBoys = ["Emil", "Tobias", "Linus"];
+var myChildren = myGirls.concat(myBoys);     // Concatenates (joins) myGirls and myBoys
+// The concat() method does not change the existing arrays. It always returns a new array.
+var arr1 = ["Cecilie", "Lone"];
+var arr2 = ["Emil", "Tobias", "Linus"];
+var arr3 = ["Robin", "Morgan"];
+var myChildren = arr1.concat(arr2, arr3);     // Concatenates arr1 with arr2 and arr3
+var arr1 = ["Cecilie", "Lone"];
+var myChildren = arr1.concat(["Emil", "Tobias", "Linus"]); //The concat() method can also take values as arguments:
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();            // Sorts the elements of fruits
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();            // Sorts the elements of fruits 
+fruits.reverse();         // Reverses the order of the elements
+
+
+
+
+
+
+var d = new Date();
+//Tue Jun 05 2018 14:18:41 GMT+0800 (China Standard Time)
+
+//There are 4 ways to create a new date object:
+new Date()
+new Date(year, month, day, hours, minutes, seconds, milliseconds)
+new Date(milliseconds)
+new Date(date string)
+//Zero time is January 01, 1970 00:00:00 UTC, JavaScript stores dates as number of milliseconds since January 01, 1970, 00:00:00 UTC (Universal Time Coordinated).
+
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toUTCString();
+//The toUTCString() method converts a date to a UTC string (a date display standard).
+//The toDateString() method converts a date to a more readable format:
+//When setting a date, without specifying the time zone, JavaScript will use the browser's time zone.
+
+// Method	Description
+// getUTCDate()	Same as getDate(), but returns the UTC date
+// getUTCDay()	Same as getDay(), but returns the UTC day
+// getUTCFullYear()	Same as getFullYear(), but returns the UTC year
+// getUTCHours()	Same as getHours(), but returns the UTC hour
+// getUTCMilliseconds()	Same as getMilliseconds(), but returns the UTC milliseconds
+// getUTCMinutes()	Same as getMinutes(), but returns the UTC minutes
+// getUTCMonth()	Same as getMonth(), but returns the UTC month
+// getUTCSeconds()	Same as getSeconds(), but returns the UTC seconds
+
+
+Math.PI;            // returns 3.141592653589793
+Math.round(4.7);    // returns 5
+Math.round(4.4);    // returns 4
+Math.pow(8, 2);      // returns 64
+Math.sqrt(64);      // returns 8
+Math.abs(-4.7);     // returns 4.7
+Math.ceil(4.4);     // returns 5
+Math.floor(4.7);    // returns 4
+Math.min(0, 150, 30, 20, -8, -200);  // returns -200
+Math.max(0, 150, 30, 20, -8, -200);  // returns 150
+Math.random();     // returns a random number, Math.random() always returns a number lower than 1.
+Math.floor(Math.random() * 10);     // returns a number between 0 and 9
+Math.floor(Math.random() * 11);      // returns a number between 0 and 10
+Math.floor(Math.random() * 100);     // returns a number between 0 and 99
+Math.floor(Math.random() * 101);     // returns a number between 0 and 100
+Math.floor(Math.random() * 10) + 1;  // returns a number between 1 and 10
+Math.floor(Math.random() * 100) + 1; // returns a number between 1 and 100
+
+
+
+
+if (hour < 18) {
+    greeting = "Good day";
+}
+
+if (hour < 18) {
+    greeting = "Good day";
+} else {
+    greeting = "Good evening";
+}
+
+if (time < 10) {
+    greeting = "Good morning";
+} else if (time < 20) {
+    greeting = "Good day";
+} else {
+    greeting = "Good evening";
+}
+
+switch (new Date().getDay()) {  //When JavaScript reaches a break keyword, it breaks out of the switch block.
+    case 0:
+        day = "Sunday";
+        break;
+    case 1:
+        day = "Monday";
+        break;
+    case 2:
+        day = "Tuesday";
+        break;
+    case 3:
+        day = "Wednesday";
+        break;
+    case 4:
+        day = "Thursday";
+        break;
+    case 5:
+        day = "Friday";
+        break;
+    case 6:
+        day = "Saturday";
+}
+
+switch (new Date().getDay()) { //The default keyword specifies the code to run if there is no case match:
+    case 6:
+        text = "Today is Saturday";
+        break; 
+    case 0:
+        text = "Today is Sunday";
+        break; 
+    default: 
+        text = "Looking forward to the Weekend";
+}
+
+
+// Sometimes you will want different switch cases to use the same code.
+// In this example case 4 and 5 share the same code block, and 0 and 6 share another code block:
+switch (new Date().getDay()) {
+    case 4:
+    case 5:
+        text = "Soon it is Weekend";
+        break; 
+    case 0:
+    case 6:
+        text = "It is Weekend";
+        break;
+    default: 
+        text = "Looking forward to the Weekend";
+}
+
+
+var i;
+for (i = 0; i < cars.length; i++) { 
+    text += cars[i] + "<br>";
+}
+
+while (i < 10) {
+    text += "The number is " + i;
+    i++;
+}
+
+
+do {
+    text += "The number is " + i;
+    i++;
+}
+while (i < 10);
+
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var i = 0;
+var text = "";
+
+while (cars[i]) {
+    text += cars[i] + "<br>";
+    i++;
+}
+
+
+for (i = 0; i < 10; i++) {
+    if (i === 3) { break; }  //The break statement breaks the loop and continues executing the code after the loop (if any):
+    text += "The number is " + i + "<br>";
+}
+
+
+for (i = 0; i < 10; i++) {
+    if (i === 3) { continue; } //The continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.
+    text += "The number is " + i + "<br>";
+}
+
+
+In JavaScript there are 5 different data types that can contain values:
+
+string
+number
+boolean
+object
+function
+There are 3 types of objects:
+
+Object
+Date
+Array
+And 2 data types that cannot contain values:
+
+null
+undefined
+
+typeof "John"                 // Returns "string" 
+typeof 3.14                   // Returns "number"
+typeof NaN                    // Returns "number"
+typeof false                  // Returns "boolean"
+typeof [1,2,3,4]              // Returns "object"
+typeof {name:'John', age:34}  // Returns "object"
+typeof new Date()             // Returns "object"
+typeof function () {}         // Returns "function"
+typeof myCar                  // Returns "undefined" *
+typeof null                   // Returns "object"
+
+Converting Numbers to Strings
+The global method String() can convert numbers to strings.
+
+It can be used on any type of numbers, literals, variables, or expressions:
+
+Example
+String(x)         // returns a string from a number variable x
+String(123)       // returns a string from a number literal 123
+String(100 + 23)  // returns a string from a number from an expression
+
+Converting Dates to Strings
+The global method String() can convert dates to strings.
+
+String(Date())      // returns "Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)"
+The Date method toString() does the same.
+
+Example
+Date().toString()   // returns "Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)"
+
+Converting Strings to Numbers
+The global method Number() can convert strings to numbers.
+
+Strings containing numbers (like "3.14") convert to numbers (like 3.14).
+
+Empty strings convert to 0.
+
+Anything else converts to NaN (Not a number).
+
+Number("3.14")    // returns 3.14
+Number(" ")       // returns 0 
+Number("")        // returns 0
+Number("99 88")   // returns NaN
+
+
+What Is a Regular Expression?
+A regular expression is a sequence of characters that forms a search pattern.
+
+When you search for data in a text, you can use this search pattern to describe what you are searching for.
+
+A regular expression can be a single character, or a more complicated pattern.
+
+Regular expressions can be used to perform all types of text search and text replace operations.
+
+Syntax
+/pattern/modifiers;
+Example
+var patt = /w3schools/i;
+Example explained:
+
+/w3schools/i  is a regular expression.
+
+w3schools  is a pattern (to be used in a search).
+
+i  is a modifier (modifies the search to be case-insensitive).
+
+Using String Methods
+In JavaScript, regular expressions are often used with the two string methods: search() and replace().
+
+The search() method uses an expression to search for a match, and returns the position of the match.
+
+The replace() method returns a modified string where the pattern is replaced.
+
+
+Example
+Use a regular expression to do a case-insensitive search for "w3schools" in a string:
+
+var str = "Visit W3Schools";
+var n = str.search(/w3schools/i);
+The result in n will be:
+
+6
+
+
+Modifiers can be used to perform case-insensitive more global searches:
+
+Modifier	Description
+i	Perform case-insensitive matching
+g	Perform a global match (find all matches rather than stopping after the first match)
+m	Perform multiline matching
+
+
+Using test()
+The test() method is a RegExp expression method.
+
+It searches a string for a pattern, and returns true or false, depending on the result.
+
+The following example searches a string for the character "e":
+
+Example
+var patt = /e/;
+patt.test("The best things in life are free!");
+Since there is an "e" in the string, the output of the code above will be:
+
+true
+
+
+
+The try statement lets you test a block of code for errors.
+
+The catch statement lets you handle the error.
+
+The throw statement lets you create custom errors.
+
+The finally statement lets you execute code, after try and catch, regardless of the result.
+
+
+<p id="demo"></p>
+
+<script>
+try {
+    adddlert("Welcome guest!");
+}
+catch(err) {
+    document.getElementById("demo").innerHTML = err.message;
+}
+</script> JavaScript catches adddlert as an error, and executes the catch code to handle it.
+
+try {
+    Block of code to try
+}
+catch(err) {
+    Block of code to handle errors
+}
+
+
+<script>
+function myFunction() {
+    var message, x;
+    message = document.getElementById("p01");
+    message.innerHTML = "";
+    x = document.getElementById("demo").value;
+    try { 
+        if(x == "") throw "empty";
+        if(isNaN(x)) throw "not a number";
+        x = Number(x);
+        if(x < 5) throw "too low";
+        if(x > 10) throw "too high";
+    }
+    catch(err) {
+        message.innerHTML = "Input is " + err;
+    }
+}
+</script>
+The throw statement allows you to create a custom error.
+
+Technically you can throw an exception (throw an error).
+
+The exception can be a JavaScript String, a Number, a Boolean or an Object:
+
+try {
+    Block of code to try
+}
+catch(err) {
+    Block of code to handle errors
+} 
+finally {
+    Block of code to be executed regardless of the try / catch result
+}The finally statement lets you execute code, after try and catch, regardless of the result:
+
+
+function myFunction() {
+    var message, x;
+    message = document.getElementById("p01");
+    message.innerHTML = "";
+    x = document.getElementById("demo").value;
+    try { 
+        if(x == "") throw "is empty";
+        if(isNaN(x)) throw "is not a number";
+        x = Number(x);
+        if(x > 10) throw "is too high";
+        if(x < 5) throw "is too low";
+    }
+    catch(err) {
+        message.innerHTML = "Error: " + err + ".";
+    }
+    finally {
+        document.getElementById("demo").value = "";
+    }
+}
+
+
+nitialize Variables
+It is a good coding practice to initialize variables when you declare them.
+
+This will:
+
+Give cleaner code
+Provide a single place to initialize variables
+Avoid undefined values
+
+// Declare and initiate at the beginning
+var firstName = "",
+    lastName = "",
+    price = 0,
+    discount = 0,
+    fullPrice = 0,
+    myArray = [],
+    myObject = {};
+    Initializing variables provides an idea of the intended use (and intended data type).
+
+Don't Use new Object()
+Use {} instead of new Object()
+Use "" instead of new String()
+Use 0 instead of new Number()
+Use false instead of new Boolean()
+Use [] instead of new Array()
+Use /()/ instead of new RegExp()
+Use function (){} instead of new Function()
+
+var x1 = {};           // new object
+var x2 = "";           // new primitive string
+var x3 = 0;            // new primitive number
+var x4 = false;        // new primitive boolean
+var x5 = [];           // new array object
+var x6 = /()/;         // new regexp object
+var x7 = function(){}; // new function object
+
+Use === Comparison
+The == comparison operator always converts (to matching types) before comparison.
+
+The === operator forces comparison of values and type:
+
+Example
+0 == "";        // true
+1 == "1";       // true
+1 == true;      // true
+
+0 === "";       // false
+1 === "1";      // false
+1 === true;     // false
+
+
+ou must use a "backslash" if you must break a statement in a string:
+
+Example 3
+var x = "Hello \
+World!";
+
+
+Delay JavaScript Loading
+Putting your scripts at the bottom of the page body lets the browser load the page first.
+While a script is downloading, the browser will not start any other downloads. In addition all parsing and rendering activity might be blocked.
+
+The HTTP specification defines that browsers should not download more than two components in parallel.
+
+If possible, you can add your script to the page by code, after the page has loaded:
+<script>
+window.onload = function() {
+    var element = document.createElement("script");
+    element.src = "myScript.js";
+    document.body.appendChild(element);
+};
+</script>
+
+
+
+What is ECMAScript 6
+ECMAScript 6 is also known as ES6 and ECMAScript 2015
+
+Some people like to call it JavaScript 6.
+
+This chapter will intoduce some of the new features in ES6.
+
+JavaScript let
+JavaScript const
+JavaScript default parameter values
+The let statement allows you to declare a variable inside brackets {} scope.
+
+Redeclaring a variable using var can impose problems:
+var x = 10;
+// Now x is 10
+{ 
+    let x = 2;
+    // Now x is 2
+}
+// Now x is 10
+
+
+The const statement is used to declare a variable with a constant value.
+
+It is similar to let, except that the value of the variable cannot be changed.
+
+The variable must be initialized when it is declared.
+var x = 10;
+// Now x is 10
+{ 
+    const x = 2;
+    // Now x is 2
+}
+// Now x is 10
+
+
+ES6 allows function parameters to have default values.
+function myFunction(x, y = 10) {
+    // y is 10 if not passed or undefined
+    return x + y;
+}
+myFunction(5); // will return 15
+
+
+The Number.isInteger() method returns true if the argument is an integer.
+Number.isInteger(10);        // returns true
+Number.isInteger(10.5);      // returns false
+
+The global isNan() method returns true if the argument is NaN. Otherwise it returns false:
+isNaN("Hello");       // returns true
+
+
+
+Arrow functions allows a short syntax for writing function expressions.
+
+You don't need the function keyword, the return keyword, and the curly brackets.
+
+// ES5
+var x = function(x, y) {
+     return x * y;
+}
+
+// ES6
+const x = (x, y) => x * y;
+const x = (x, y) => { return x * y };
+
+
+
+Converting a JSON Text to a JavaScript Object
+A common use of JSON is to read data from a web server, and display the data in a web page.
+
+For simplicity, this can be demonstrated using a string as input.
+
+First, create a JavaScript string containing JSON syntax:
+
+var text = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+Then, use the JavaScript built-in function JSON.parse() to convert the string into a JavaScript object:
+
+var obj = JSON.parse(text);
+Finally, use the new JavaScript object in your page:
+
+Example
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML =
+obj.employees[1].firstName + " " + obj.employees[1].lastName;
+</script>
+
+
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+Object Types (Blueprints) (Classes)
+The examples from the previous chapters are limited. They only create single objects.
+
+Sometimes we need a "blueprint" for creating many objects of the same "type".
+
+The way to create an "object type", is to use an object constructor function.
+
+In the example above, function Person() is an object constructor function.
+
+Objects of the same type are created by calling the constructor function with the new keyword:
+var myFather = new Person("John", "Doe", 50, "blue");
+var myMother = new Person("Sally", "Rally", 48, "green");
+
+
+Adding a Method to a Constructor
+Your constructor function can also define methods:
+
+Example
+function Person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+    this.name = function() {return this.firstName + " " + this.lastName;};
+}
+
+
+Using the prototype Property
+The JavaScript prototype property allows you to add new properties to object constructors:
+
+Example
+function Person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+Person.prototype.nationality = "English";
+The JavaScript prototype property also allows you to add new methods to objects constructors:
+
+Example
+function Person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+Person.prototype.name = function() {
+    return this.firstName + " " + this.lastName;
+};
+Only modify your own prototypes. Never modify the prototypes of standard JavaScript objects.
+
+
+
+Example
+First, create a bookmark with the id attribute:
+
+<h2 id="C4">Chapter 4</h2>
+Then, add a link to the bookmark ("Jump to Chapter 4"), from within the same page:
+
+<a href="#C4">Jump to Chapter 4</a>
+Or, add a link to the bookmark ("Jump to Chapter 4"), from another page:
+
+Example
+<a href="html_demo.html#C4">Jump to Chapter 4</a>
+
+
+
+When to Use GET?
+The default method when submitting form data is GET.
+
+However, when GET is used, the submitted form data will be visible in the page address field:
+
+/action_page.php?firstname=Mickey&lastname=Mouse
+Notes on GET:
+
+Appends form-data into the URL in name/value pairs
+The length of a URL is limited (about 3000 characters)
+Never use GET to send sensitive data! (will be visible in the URL)
+Useful for form submissions where a user want to bookmark the result
+GET is better for non-secure data, like query strings in Google

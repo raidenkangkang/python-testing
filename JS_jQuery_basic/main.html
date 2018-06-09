@@ -1,5 +1,43 @@
+<!--The jQuery syntax is tailor-made for selecting HTML elements and performing some action on the element(s).-->
+<!--Basic syntax is: $(selector).action()-->
+<!--A $ sign to define/access jQuery-->
+<!--A (selector) to "query (or find)" HTML elements-->
+<!--A jQuery action() to be performed on the element(s)-->
+
+<!--You might have noticed that all jQuery methods in our examples, are inside a document ready event:-->
+<!--$(document).ready(function(){-->
+<!--   // jQuery methods go here...-->
+<!--});-->
+<!--This is to prevent any jQuery code from running before the document is finished loading (is ready).-->
+
+<!--JavaScript statements are executed line by line. However, with effects, the next line of code can be run even though the effect is not finished. This can create errors.-->
+<!--To prevent this, you can create a callback function.-->
+<!--A callback function is executed after the current effect is finished.-->
+<!--Typical syntax: $(selector).hide(speed,callback);-->
+
+<!--here is a technique called chaining, that allows us to run multiple jQuery commands, one after the other, on the same element(s).-->
+<!--Tip: This way, browsers do not have to find the same element(s) more than once.-->
+<!--To chain an action, you simply append the action to the previous action.-->
+<!--The following example chains together the css(), slideUp(), and slideDown() methods. The "p1" element first changes to red, then it slides up, and then it slides down:-->
+<!--$("#p1").css("color", "red").slideUp(2000).slideDown(2000);-->
+
+<!--Three simple, but useful, jQuery methods for DOM manipulation are:-->
+<!--text() - Sets or returns the text content of selected elements-->
+<!--html() - Sets or returns the content of selected elements (including HTML markup)-->
+<!--val() - Sets or returns the value of form fields-->
+
+<!--The noConflict() method releases the hold on the $ shortcut identifier, so that other scripts can use it.-->
+<!--var jq = $.noConflict();-->
+<!--jq(document).ready(function(){-->
+<!--    jq("button").click(function(){-->
+<!--        jq("p").text("jQuery is still working!");-->
+<!--    });-->
+<!--});-->
+
+
+
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
 <head>
     <script>
@@ -8,6 +46,7 @@
         }
     </script>
     <script type="text/javascript" src="myJS-01.js"></script>
+    <script type="text/javascript" src="html_event.js"></script>
 </head>
 
 <body>
@@ -25,6 +64,9 @@
     <button type="button" onclick="myAnotherFunc()">Change from JS file</button>
     <button type="button" onclick="myWrite()">Document.Write</button>
     <button type="button" onclick="myObject()">Show my object</button>
+    <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">Show the time</button>
+    <button type="button" onclick="this.innerHTML = Date()">Show the time on this button using "this."</button>
+
 
     
     <script>
