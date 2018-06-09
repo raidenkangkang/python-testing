@@ -1,4 +1,5 @@
-sudo python3.6 -m pip install numpy
+sudo python3.6 -m pip install boto3
+sudo pip install --upgrade pip
 
 
 3) Build your Docker image using the following command. For information on building a Docker file from scratch see the instructions here. You can skip this step if your image is already built:
