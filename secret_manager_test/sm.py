@@ -36,6 +36,5 @@ def get_secret():
             binary_secret_data = get_secret_value_response['SecretBinary']
     return get_secret_value_response['SecretString']
 
-# 返回密码，参数等等
-#{"username":"raidenyu","password":"raiden's password","engine":"mysql","host":"maindb.cdh6uj0q1vxk.us-east-2.rds.amazonaws.com","port":3306,"dbname":"raidendb","dbInstanceIdentifier":"maindb"}
+
 print(get_secret())
