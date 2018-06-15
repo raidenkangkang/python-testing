@@ -1,4 +1,5 @@
-sudo python3.6 -m pip install numpy
+sudo python3.6 -m pip install boto3
+sudo pip install --upgrade pip
 
 
 3) Build your Docker image using the following command. For information on building a Docker file from scratch see the instructions here. You can skip this step if your image is already built:
@@ -21,3 +22,23 @@ git add --all
 git status
 git commit -m "some comments"
 git push
+
+
+
+docker version
+docker info
+docker (show the all docker commands)
+docker container run --publish 80(host):80(container) nginx
+docker container run --publish 80:90 --name raidenweb nginx   (access localhost via localhost:80)
+docker container logs raidenweb
+docker container top
+docker container --help
+docker container run --name raidenmongo mongo
+docker top raidenmongo  (show the process running in the container)
+docker container run --publish 80:80 --name apache httpd
+docker container top raidenngixn  (list container config)
+docker container stats  (all container's performance status)
+docker container inspect raidennginx (contain spec)
+docker container run -it --name newweb nginx bash   (direct goes to the root putty access, access folder/files inside that container, can change config file, download package like normal shell)
+docker container exec -it raidenweb bash  (when the container is started, goes to the putty to do admin job same as above)
+docker image ls  (show the image list and size and version)
