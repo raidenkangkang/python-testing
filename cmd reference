@@ -28,8 +28,8 @@ git push
 docker version
 docker info
 docker (show the all docker commands)
-docker container run --publish 80(host):80(container) nginx
-docker container run --publish 80:90 --name raidenweb nginx   (access localhost via localhost:80)
+docker container run --publish 80(host):80(container) nginx:latest   (publish means opened to outside world to access)
+docker container run --publish 80:90 --name raidenweb nginx:1.15.0   (access localhost via localhost:80)
 docker container logs raidenweb
 docker container top
 docker container --help
@@ -42,3 +42,11 @@ docker container inspect raidennginx (contain spec)
 docker container run -it --name newweb nginx bash   (direct goes to the root putty access, access folder/files inside that container, can change config file, download package like normal shell)
 docker container exec -it raidenweb bash  (when the container is started, goes to the putty to do admin job same as above which runs on existing container that specified)
 docker image ls  (show the image list and size and version)
+docker container port raidenweb   (shows the port structure)
+
+docker network ls
+docker network inspect bridge
+docker network create my_docker_network
+
+docker image ls
+docker image inspect nginx:1.15.0
