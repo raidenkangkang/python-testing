@@ -42,6 +42,7 @@ docker container inspect raidennginx (contain spec)
 docker container run -it --name newweb nginx bash   (direct goes to the root putty access, access folder/files inside that container, can change config file, download package like normal shell)
 docker container exec -it raidenweb bash  (when the container is started, goes to the putty to do admin job same as above which runs on existing container that specified)
 docker container port raidenweb   (shows the port structure)
+docker container run -d --name raiden-mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
 
 docker network ls
 docker network inspect bridge
@@ -51,5 +52,12 @@ docker image ls  (show the image list and size and version)
 docker image inspect nginx:1.15.0
 docker image tag httpd raidenyu/httpd  (create from source to target)
 docker image push raidenyu/nginx:testing
+docker image pull mysql:latest
 
 docker image build -t custom-nginx .   (put the docker file into the same folder of .   and tag with name of custom-nginx)
+
+
+docker volume ls
+docker container run -d --name raiden-mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db-volume:/Users/raiden/Desktop/Development/Docker-test/volume-storage mysql  (specific the -v for volume storage path)
+
+docker container logs raiden-mysql
