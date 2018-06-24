@@ -61,3 +61,33 @@ docker volume ls
 docker container run -d --name raiden-mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db-volume:/Users/raiden/Desktop/Development/Docker-test/volume-storage mysql  (specific the -v for volume storage path)
 
 docker container logs raiden-mysql
+
+
+docker-compose:
+version: '3.1' # if no version specificed, then v1 is assumsed.
+
+services: # containers, same as docker run command
+  servicename: # a friendly name, this is also the DNS name inside the network
+    image: # optional if you use build
+    command: # optional, replace the default CMD specified by the image
+    environment: # optional, same as -e in docker run
+    volumes: # optional, same as -v in docker run
+    ports: # optioanl for ports
+  servicename2: # continue and repeat
+  servicename3: # continue and repeat
+
+volumes: # optional, same as docker volume create
+
+networks: # optional, same as docker network create
+
+
+
+docker swam init  (enable the Swarm function)
+docker node ls  (list the nodes)
+docker service create nginx (setup a new nginx services in the cluster as a service)
+docker service inspect xxxxx_name
+
+docker service update zpaos7lytu5s --replicas 5   (make it 5 replicas running in all the nodes)
+docker service ps zpaos7lytu5s  (shows all processes)
+docker service update --help  (find help for udpate command)
+docker container remove -f your_container_id  (force remove a container)
