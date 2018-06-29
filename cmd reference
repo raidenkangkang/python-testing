@@ -1,6 +1,11 @@
 sudo python3.6 -m pip install boto3
 sudo pip install --upgrade pip
 
+EC2 install docker and update
+sudo yum update -y
+sudo yum install -y docker
+sudo service docker start
+
 
 3) Build your Docker image using the following command. For information on building a Docker file from scratch see the instructions here. You can skip this step if your image is already built:
 docker build -t testing-container-repo .
@@ -82,7 +87,7 @@ networks: # optional, same as docker network create
 
 
 
-docker swam init  (enable the Swarm function)
+docker swarm init  (enable the Swarm function)
 docker node ls  (list the nodes)
 docker service create nginx (setup a new nginx services in the cluster as a service)
 docker service inspect xxxxx_name
