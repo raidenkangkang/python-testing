@@ -49,6 +49,7 @@ docker container run -it --name newweb nginx bash   (direct goes to the root put
 docker container exec -it raidenweb bash  (when the container is started, goes to the putty to do admin job same as above which runs on existing container that specified)
 docker container port raidenweb   (shows the port structure)
 docker container run -d --name raiden-mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
+docker exec -it your_container_id /bin/bash    (进入运行中的container)
 
 docker network ls
 docker network inspect bridge
