@@ -1,2 +1,11 @@
 aws ec2 describe-instances --instance-ids i-02c0ca031f97755e6 --output table
 aws ec2 describe-instances help
+
+aws ec2 describe-regions --query 'Regions[?RegionName==`us-east-2`]'    查找JSON嵌套，第一层是Region，下面的Key是RegionName，us-ease外面的是` esc下面的按键
+aws ec2 describe-instances --filter Name=instance-type,Values=t2.micro  filter是在服务端的，query是数据拿到本地然后本地筛选
+
+aws ec2 describe-regions --query 'Regions[?Endpoint==`ec2.us-east-1.amazonaws.com`]' --dry-run
+An error occurred (DryRunOperation) when calling the DescribeRegions operation: Request would have succeeded, but DryRun flag is set.
+--用dry run来测试权限，before make any big changes
+
+aws s3 mb s3://mybucket-raiden-test-again   --make a bucket

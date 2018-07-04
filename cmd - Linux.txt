@@ -1,6 +1,8 @@
 sudo python3.6 -m pip install boto3
 sudo pip install --upgrade pip
 
+pip install --upgrade pip   (this is to update pip components)
+
 EC2 install docker and update
 sudo yum update -y
 sudo yum install -y docker
@@ -12,3 +14,8 @@ sudo python3.6 -m pip install numpy
 
 cd ~/  代表当前用户目录, 如 cd ~/Desktop or cd ~/.aws
 
+echo ${SHELL}  返回shell名字
+which aws_completer 找具体目录/文件的路径
+complete -C '/Library/Frameworks/Python.framework/Versions/3.6/bin/aws_completer' aws   complete是linux下的自动补全命令
+
+aws ec2 describe-regions | jpterm   (调用jmespath terminal)
