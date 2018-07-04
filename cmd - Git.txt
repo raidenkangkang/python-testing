@@ -1,0 +1,7 @@
+
+#git process
+git add --all
+git status
+git commit -m "some comments"
+git push
+git push --set-upstream https://github.com/raidenkangkang/raiden-jenkins-test.git master   (initial)

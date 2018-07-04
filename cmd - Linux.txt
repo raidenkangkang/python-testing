@@ -1,0 +1,12 @@
+sudo python3.6 -m pip install boto3
+sudo pip install --upgrade pip
+
+EC2 install docker and update
+sudo yum update -y
+sudo yum install -y docker
+sudo service docker start
+
+#add python3 install package
+sudo python3.6 -m pip install numpy
+
+

@@ -1,0 +1,2 @@
+aws ec2 describe-instances --instance-ids i-02c0ca031f97755e6 --output table
+aws ec2 describe-instances help
