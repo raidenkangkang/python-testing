@@ -7,5 +7,24 @@ aws ec2 describe-instances --filter Name=instance-type,Values=t2.micro  filter�
 aws ec2 describe-regions --query 'Regions[?Endpoint==`ec2.us-east-1.amazonaws.com`]' --dry-run
 An error occurred (DryRunOperation) when calling the DescribeRegions operation: Request would have succeeded, but DryRun flag is set.
 --用dry run来测试权限，before make any big changes
+aws ec2 describe-regions | jpterm   (调用jmespath terminal)
+aws ec2 create-key-pair --key-name myKey  (创建key pair for ec2)
+aws ec2 create-key-pair --key-name mykeys --output text > kk.pem  (生成后保存到本地的.pem文件)
+aws ec2 create-security-group --group-name cli-group --description "My security group from CLI" --vpc-id vpc-de90cbb6  (创建security group)
+aws ec2 describe-security-groups --group-ids sg-3199e15a --output table  (显示security group 内容)
 
+aws s3 cp download-from-S3.sh s3://stupid-bucker-raiden  (copy file to S3 bucket)
+aws s3 mb s3://new-bucket  (create a new bucket)
+aws s3 ls （列出所有Bucket）
+aws s3 ls your-bucket-name (显示某个bucket里面的内容）
+aws s3 cp download-from-S3.sh s3://stupid-bucker-raiden/okok/not-ok/   (copy到bucket下面的某些folder)
+aws s3 mv s3://stupid-bucker-raiden . --recursive   (从S3 move到local到本地，S3下面的就被删除了，其中的 . 代表当前目录 --recursive意味着包含所有的子目录等)
+aws s3 sync . s3://raiden-lambda-s3  (和本地目录文件夹同步)
+aws s3 rm s3://raiden-lambda-s3/download-from-S3.sh  (删除文件和文件夹)
+aws s3 rb s3://stupid-bucker-raiden --force  (移除bucket，默认bucket下有内容则是不能删除，加上--force就可以删除了)
 aws s3 mb s3://mybucket-raiden-test-again   --make a bucket
+
+aws sns list-subscriptions  (list all subscriptions
+
+aws ecs list-clusters  (list all clusters)
+aws ecs create-cluster --cluster-name raiden-cli  (create cluster)
