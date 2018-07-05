@@ -1,3 +1,5 @@
+/bin/bash aws-test.sh  (执行AWS相关的 .sh命令)
+
 aws ec2 describe-instances --instance-ids i-02c0ca031f97755e6 --output table
 aws ec2 describe-instances help
 
@@ -28,3 +30,4 @@ aws sns list-subscriptions  (list all subscriptions
 
 aws ecs list-clusters  (list all clusters)
 aws ecs create-cluster --cluster-name raiden-cli  (create cluster)
+aws ecs list-tasks --cluster raiden-ecs-nginx  (list tasks from one cluster)
