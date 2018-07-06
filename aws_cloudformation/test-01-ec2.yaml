@@ -8,18 +8,33 @@ Description: >-
   address of the external EIP. **WARNING** This template creates an Amazon EC2
   instance and an Elastic IP Address. You will be billed for the AWS resources
   used if you create a stack from this template.
+
+# resource format is:
+# AWS::aws-product-name::data-type-name
+
 Parameters:
   InstanceType:
-    Description: WebServer EC2 instance type
+    Description: Allowed instance type for EC2
     Type: String
     Default: t2.micro
     AllowedValues:
       - t2.micro
-    ConstraintDescription: must be a valid EC2 instance type.
+      - t2.nano
+      - t2.small
+    ConstraintDescription: must be a valid EC2 instance type, this is an error messager.
   KeyName:
-    Description: ec2-key-pair
+    Description: Pre-build key-pair
+#    don't put any default of value list, just leave it is,  cloudformation will automate pop up
     Type: 'AWS::EC2::KeyPair::KeyName'
     ConstraintDescription: must be the name of an existing EC2 KeyPair.
+  YourVPC:
+    Description: VPC to be selected
+    Type: AWS::EC2::VPC::Id
+    ConstraintDescription: must be a validate VPC in your region
+  YourSubNet:
+    Description: select your subnet ID
+    Type: 'List<AWS::EC2::Subnet::Id>'
+    ConstraintDescription: must be a validate subnet-ID in your region
   SSHLocation:
     Description: The IP address range that can be used to SSH to the EC2 instances
     Type: String
@@ -49,7 +64,7 @@ Resources:
           - ''
           - - IPAddress=
             - !Ref IPAddress
-      InstanceType: !Ref InstanceType
+      InstanceType: 'm5d.2xlarge'
       SecurityGroups:
         - !Ref InstanceSecurityGroup
       KeyName: !Ref KeyName

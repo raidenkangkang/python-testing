@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Resources:
+  CloudFormationS3Test:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      AccessControl: 'PublicRead'
+      BucketName: 'raiden-cloud-formation-bucket'
+      Tags:
+        - Key: 'purpose'
+          Value: 'cloud-formation-test'
+        - Key: 'env'
+          Value: 'dev'
+      VersioningConfiguration:
+          Status: 'Enabled'
+      WebsiteConfiguration:
+          IndexDocument: 'index.html'
+          ErrorDocument: 'error.html'

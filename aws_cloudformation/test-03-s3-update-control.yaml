@@ -1,0 +1,36 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+
+Parameters:
+  Environment:
+    Description: Select environment
+    Type: String
+    AllowedValues: [Development, Stage, Production]
+    Default: Development
+    ConstraintDescription: must be development, stage, or production
+
+Mappings:
+  Environment:
+    Development:
+      AccessControl: PublicRead
+    Production:
+      AccessControl: BucketOwnerRead
+    Stage:
+      AccessControl: Private
+
+Resources:
+  CloudFormationS3TestV2:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      AccessControl: !FindInMap [Environment, !Ref 'Environment', AccessControl]
+      BucketName: 'raiden-cloud-formation-bucket-V2'
+      Tags:
+        - Key: 'purpose'
+          Value: 'cloud-formation-test-V2'
+        - Key: 'env'
+          Value: !Ref 'Environment'
+      VersioningConfiguration:
+          Status: 'Enabled'
+      WebsiteConfiguration:
+          IndexDocument: 'index.html'
+          ErrorDocument: 'error.html'
