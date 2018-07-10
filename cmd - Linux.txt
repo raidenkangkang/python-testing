@@ -28,3 +28,11 @@ echo ${SHELL}  返回shell名字
 which aws_completer 找具体目录/文件的路径
 complete -C '/Library/Frameworks/Python.framework/Versions/3.6/bin/aws_completer' aws   complete是linux下的自动补全命令
 
+1、chmod 空格"+x" 空格 你的sh文件名   (+x是一个整体,不要拆开)。
+
+2、输入"./你的sh文件名" 即可执行。举例:
+
+1     chmod +x helloworld.sh。
+
+2    ./helloworld.sh。
+
