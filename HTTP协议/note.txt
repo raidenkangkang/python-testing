@@ -24,3 +24,31 @@ Set-Cookie: name=Raiden; domain=localhost:8888
 Connection: close
 Date: Wed, 11 Jul 2018 04:08:01 GMT
 Transfer-Encoding: chunked
+
+
+(302 redirect，// 302重定向, 301是永久跳转，浏览器负责，不需要服务器来跳转，而且301从缓存读取)
+if(request.url === "/new"){
+		response.writeHead(302, {
+			"Location": "/"
+		})
+		response.end("")
+	}
+
+
+Content-Security-Policy 来控制JS是否可以执行，inline或者外部加载等，也可以指定去加载本站的外挂JS，也可以指定某个域名下面的JS加载
+（CSP）
+
+
+获取API gateway的数据
+<script>
+	var xhr = new XMLHttpRequest()
+	xhr.open("GET", "https://hoiaezgsc8.execute-api.us-east-2.amazonaws.com/dev/lambda")	//read from API gateway
+	xhr.send()
+
+	xhr.onreadystatechange = function() {//服务器返回值的处理函数，此处使用匿名函数进行实现
+    if (xhr.readyState == 4 && xhr.status == 200) {//
+        var responseText = xhr.responseText;
+        document.getElementById('demo').innerHTML = responseText;
+    	}
+	}
+</script>
