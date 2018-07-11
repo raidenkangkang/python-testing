@@ -1,0 +1,26 @@
+浏览器允许在html 标签上面进行跨域 - image, link, script 标签，但是代码里面需要对方服务器同意
+
+
+GET / HTTP/1.1
+Host: localhost:8888
+Connection: keep-alive          (连接方式）
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+DNT: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36        （浏览器agent，比如PC和手机）
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8       （接受的格式类型）
+Accept-Encoding: gzip, deflate, br      （压缩算法）
+Accept-Language: en-US,en;q=0.9,ja;q=0.8,zh-CN;q=0.7,zh-TW;q=0.6,zh;q=0.5       （接受语言）
+Cookie: Pycharm-2b840727=05191f2c-fc84-4af5-8660-9454eaa67750; Pycharm-40726385=0c0f0d22-cbb2-4e71-9fc5-bd6ecbdc7f92; hudson_auto_refresh=true; name=Raiden
+
+与之对应的request便是从服务端来的response
+
+HTTP/1.1 200 OK
+Content-Type: text/html  （对应客户端的Accept）
+Content-Encoding: gip       （对应客户端的Accept-Encoding）
+Content-Language：en-US      （对应客户端的Accept-Language）
+Set-Cookie: id=123; max-age=5
+Set-Cookie: name=Raiden; domain=localhost:8888
+Connection: close
+Date: Wed, 11 Jul 2018 04:08:01 GMT
+Transfer-Encoding: chunked
