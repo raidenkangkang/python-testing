@@ -2,9 +2,8 @@
 import 功能测试
 """
 
-import time as t #import time 模块, 默认可以使用time下的所有功能
-from time import localtime, time #从time模块导入localtime和time两个功能
-from time import * #星号导入所有time下面的功能
+from Python_basic.basic import time as t, time
+from Python_basic.basic.time import localtime  #从time模块导入localtime和time两个功能
 from mymodule_test import Calculator #导入自己的类库
 
 print(localtime())
