@@ -1,3 +1,6 @@
+sudo -H pip install awscli --upgrade --ignore-installed six
+
+
 /bin/bash aws-test.sh  (执行AWS相关的 .sh命令)
 or
 ./aws-test.sh (在相同目录执行该脚本)
