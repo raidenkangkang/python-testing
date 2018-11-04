@@ -4,7 +4,7 @@
 import hashlib
 
 # 待加密信息
-str = 'this is a md5 test. '
+str = 'this is a md5 test.阿萨斯大林；加速度了；加深对了；加快了健康的萨达撒开了炯炯额文如其人暗色群翁群无1 '
 
 # 创建md5对象
 hl = hashlib.md5()
